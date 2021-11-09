@@ -1,0 +1,51 @@
+:root {
+    font-family: 'Indie Flower', sans-serif;
+    --primary-color:#ffb3ba;
+    --secondary-color:#b6eebd;
+    --tertiary-color: #bae1ff; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: #f3f3f3;
+}
+
+#intro {
+    margin: auto;
+    width: 50%;
+    padding: 3rem;
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2.2rem;
+    margin-top: 5rem;
+}
+
+#about {
+    border: 2px var(--primary-color) solid;
+}
+
+#motiv {
+    border: 2px var(--secondary-color) solid;
+}
+
+#work {
+    border: 2px var(--tertiary-color) solid; 
+
+}
+
+.intro-border {
+    padding: 3rem;
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    text-align: center;
+}
