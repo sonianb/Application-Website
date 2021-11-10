@@ -33,19 +33,45 @@ body {
     border: 2px var(--primary-color) solid;
 }
 
+#about:hover {
+    background: url(/img/pinkimg.png);
+    animation-duration: 3s;
+    transform-origin: bottom;
+} 
+
 #motiv {
     border: 2px var(--secondary-color) solid;
 }
 
+#motiv:hover {
+    background-image: url(/img/greenimg.png);
+}
+
 #work {
     border: 2px var(--tertiary-color) solid; 
+}
 
+#work:hover {
+    background-image: url(/img/blueimg.png);
 }
 
 .intro-border {
+    display: block;
     padding: 3rem;
     border-radius: 50%;
     width: 12rem;
     height: 12rem;
     text-align: center;
+}
+
+.bounce-1 {
+    animation-name: bounce-1;
+    animation-timing-function: ease;
+}
+@keyframes bounce-1 {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-100px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
 }
