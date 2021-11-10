@@ -31,29 +31,38 @@ body {
 
 #about {
     border: 2px var(--primary-color) solid;
+    animation-duration: 2s;
+    transform-origin: bottom;
+    background: url(/img/pinkimg.png)
 }
 
-#about:hover {
+/* #about:hover {
     background: url(/img/pinkimg.png);
-    animation-duration: 3s;
-    transform-origin: bottom;
-} 
+}  */
 
 #motiv {
     border: 2px var(--secondary-color) solid;
+    animation-duration: 2s;
+    transform-origin: bottom;
+    animation-delay: 1.5s;
+    background-image: url(/img/greenimg.png)
 }
 
-#motiv:hover {
+/* #motiv:hover {
     background-image: url(/img/greenimg.png);
-}
+} */
 
 #work {
-    border: 2px var(--tertiary-color) solid; 
+    border: 2px var(--tertiary-color) solid;
+    animation-duration: 2s;
+    transform-origin: bottom;
+    animation-delay: 3s; 
+    background-image: url(/img/blueimg.png)
 }
 
-#work:hover {
+/* #work:hover {
     background-image: url(/img/blueimg.png);
-}
+} */
 
 .intro-border {
     display: block;
@@ -69,9 +78,34 @@ body {
     animation-timing-function: ease;
 }
 @keyframes bounce-1 {
-    0%   { transform: scale(1,1)    translateY(0); }
-    10%  { transform: scale(1.1,.9) translateY(0); }
-    30%  { transform: scale(.9,1.1) translateY(-100px); }
-    50%  { transform: scale(1,1)    translateY(0); }
-    100% { transform: scale(1,1)    translateY(0); }
+    0%   { transform: scale(1,1)    translateY(-200px); }
+    20%  { transform: scale(1.1,.9) translateY(0); }
+    40%  { transform: scale(.9,1.1) translateY(-80px); }
+    65% { transform: scale(1,1)    translateY(0); }
+}
+
+@media screen and (max-width: 992px) {
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 2rem;
+    }
+
+    .intro-border {
+        display: block;
+        padding: 2.5rem;
+        border-radius: 50%;
+        width: 10.5rem;
+        height: 10.5rem;
+        text-align: center;
+    }
+    
+    #intro {
+        margin: auto;
+        width: 50%;
+        padding: 1rem;
+        text-align: center;
+        font-size: 3rem;
+    }
+
 }
