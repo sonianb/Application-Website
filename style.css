@@ -45,8 +45,9 @@ body {
     animation-duration: 2s;
     transform-origin: bottom;
     animation-delay: 1.5s;
-    background-image: url(/img/greenimg.png)
+    background-image: url(/img/greenimg.png);
 }
+
 
 /* #motiv:hover {
     background-image: url(/img/greenimg.png);
@@ -84,6 +85,68 @@ body {
     65% { transform: scale(1,1)    translateY(0); }
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 10rem);
+    grid-template-rows: repeat(4, 10rem);
+    grid-template-areas: 
+        "start-project . . . ." 
+        "project-1 . project-7 project-8 project-9"
+        "project-2 . project-6 . project-10"
+        "project-3 project-4 project-5 . ."
+    ;
+
+    column-gap: 0.1rem;
+    row-gap: 0.1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.position-grid {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#start-project {
+    grid-area: start-project;
+}
+
+#project-1 {
+    grid-area: project-1;
+}
+#project-2 {
+    grid-area: project-2;
+}
+#project-3 {
+    grid-area: project-3;
+}
+#project-4 {
+    grid-area: project-4;
+}
+#project-5 {
+    grid-area: project-5;
+}
+#project-6 {
+    grid-area: project-6;
+}
+#project-7 {
+    grid-area: project-7;
+}
+#project-8 {
+    grid-area: project-8;
+}
+#project-9 {
+    grid-area: project-9;
+}
+#project-10 {
+    grid-area: project-10;
+}
+
+.grid-items {
+    border: solid 1px;
+}
+
 @media screen and (max-width: 992px) {
     .flex {
         display: flex;
@@ -105,7 +168,8 @@ body {
         width: 50%;
         padding: 1rem;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
 }
+
