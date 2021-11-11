@@ -17,7 +17,7 @@ body {
 #intro {
     margin: auto;
     width: 50%;
-    padding: 3rem;
+    padding: 1.5rem;
     text-align: center;
     font-size: 3.5rem;
 }
@@ -98,8 +98,6 @@ body {
 
     column-gap: 0.1rem;
     row-gap: 0.1rem;
-    text-align: center;
-    font-size: 1.5rem;
 }
 
 .position-grid {
@@ -114,38 +112,52 @@ body {
 
 #project-1 {
     grid-area: project-1;
+    background-color: var(--primary-color);
 }
 #project-2 {
     grid-area: project-2;
+    background-color: var(--secondary-color);
 }
 #project-3 {
     grid-area: project-3;
+    background-color: var(--tertiary-color);
 }
 #project-4 {
     grid-area: project-4;
+    background-color: var(--primary-color);
 }
 #project-5 {
     grid-area: project-5;
+    background-color: var(--secondary-color);
 }
 #project-6 {
     grid-area: project-6;
+    background-color: var(--tertiary-color);
 }
 #project-7 {
     grid-area: project-7;
+    background-color: var(--primary-color);
 }
 #project-8 {
     grid-area: project-8;
+    background-color: var(--secondary-color);
 }
 #project-9 {
     grid-area: project-9;
+    background-color: var(--tertiary-color);
 }
 #project-10 {
     grid-area: project-10;
+    background-color: var(--primary-color);
 }
 
 .grid-items {
     border: solid 1px;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 1rem ;
 }
+
 
 @media screen and (max-width: 992px) {
     .flex {
@@ -169,6 +181,27 @@ body {
         padding: 1rem;
         text-align: center;
         font-size: 2.5rem;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(5, 5.5rem);
+        grid-template-rows: repeat(4, 5.5rem);
+        grid-template-areas: 
+            "start-project  . . . ."
+            "project-1 . project-7 project 8 project-9"
+            "project-2 . project-6 . project-10"
+            "project-3 project-4 project-5 . ."
+            
+        ;
+        column-gap: 0.1rem;
+        row-gap: 0.1rem;
+        text-align: center;
+    }
+    .grid-items {
+        border: solid 1px;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.5rem ;
     }
 
 }
