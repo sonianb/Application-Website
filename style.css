@@ -3,11 +3,16 @@
     --primary-color:#ffb3ba;
     --secondary-color:#b6eebd;
     --tertiary-color: #bae1ff; 
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
 }
 
 a {
     text-decoration: none;
 }
+
+/* 1. landing page style */
 
 body {
     background-color: #f3f3f3;
@@ -18,7 +23,8 @@ body {
     width: 50%;
     padding: 1.5rem;
     text-align: center;
-    font-size: clamp(2rem, 2.5vw ,2.5rem) ;
+    /* need to fix the font-size */
+    font-size: clamp(2rem, 10vw ,3rem);
 }
 
 .flex {
@@ -74,6 +80,8 @@ body {
     font-size: 2rem;
 }
 
+/*1.1 add animation for landing page items*/
+
 .bounce-1 {
     animation-name: bounce-1;
     animation-timing-function: ease;
@@ -84,6 +92,9 @@ body {
     40%  { transform: scale(.9,1.1) translateY(-80px); }
     65% { transform: scale(1,1)    translateY(0); }
 }
+
+/* 2. Stlye "work" page
+/* 2.1 create and style the grid */
 
 .grid-container {
     display: grid;
@@ -154,18 +165,13 @@ body {
 .grid-items {
     border: solid 1px;
     text-align: center;
-    /* font-size: clamp(1rem, 2.5vw, 1.8rem); */
+    font-size: clamp(1rem, 2vw, 1.8rem);
     padding: 1rem ;
     cursor: pointer;
-    /* width: 10vw;
-    min-height: 15vh; */
-    font-size: 1.8rem;
 }
 
-/* .item-resized {
-    width: 20rem;
-    height: 15rem;
-} */
+
+/* 2.2 style the dialog description box that appears when the user clicks on a grid item */
 
 .large-container {
     background-color:var(--primary-color);
@@ -173,9 +179,8 @@ body {
     position: absolute;
     top: 28vh;
     left: 44.2vw;
-    min-width: 30px;
-    height: 15vh;
-    width: 18.8vw;
+    width: 25vw;
+    height: fit-content;
     padding: 1rem;
     display: none;
 }
@@ -189,7 +194,83 @@ border: 2px solid rgb(253, 245, 245);
 cursor: pointer;
 }
 
-@media (min-width: 320px) {
+/*3. Style the quiz on motiv page*/
+
+.quiz-body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue-neutral), 100%, 20%);
+}
+
+.quiz-body.correct {
+    --hue: var(--hue-correct);
+}
+
+.quiz-body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.quiz-container {
+    width: 800px;
+    max-width: 80%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.grid-btn {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.quiz-btns {
+    --hue: var(--hue-neutral);
+    border: 1px solid black;
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.quiz-btns:hover {
+    border-color: red;
+}
+
+.quiz-btns.correct {
+    background-color: green;
+    color: black;
+}
+
+.quiz-btns.wrong {
+    background-color: red;
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 808px) {
     .flex {
         display: flex;
         flex-wrap: wrap;
@@ -214,13 +295,13 @@ cursor: pointer;
     }
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(5, 5.5rem);
+        grid-template-columns: repeat(3, 5.5rem);
         grid-template-rows: repeat(4, 5.5rem);
         grid-template-areas: 
-            "start-project  . . . ."
-            "project-1 . project-7 project 8 project-9"
-            "project-2 . project-6 . project-10"
-            "project-3 project-4 project-5 . ."
+            "start-project project-9 project-8"
+            "project-1 project-10 project-7"
+            "project-2 . project-6"
+            "project-3 project-4 project-5"
             
         ;
         column-gap: 0.1rem;
@@ -231,6 +312,16 @@ cursor: pointer;
         border: solid 1px;
         text-align: center;
         padding: 0.5rem ;
+    }
+
+    .large-container {
+        position: absolute;
+        top: 30vh;
+        left: 30vw;
+        width: 35vw;
+        height: fit-content;
+        padding: 1rem;
+        display: none;
     }
 
 }
