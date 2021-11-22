@@ -20,7 +20,7 @@ nextBtn.addEventListener('click', () => setNextQuestion())
 function setNextQuestion() {
     hideNextBtn();
     //get the second question 
-    // showQuestion(myQuestions[1]);
+    showQuestion(myQuestions[1]);
 }
 
 function showQuestion(question) {
@@ -31,30 +31,23 @@ function showQuestion(question) {
         button.innerText = answer.text;
         //apply the styling
         button.classList.add('quiz-btns');
-        // if (answer.correct) {
-        //     button.dataset.correct = answer.correct
-        // }
         button.addEventListener('click', () => selectAnswer(answer.correct));
         answerBtnsElem.appendChild(button);
     });
 }
 
 function hideNextBtn() {
-    nextButton.classList.add('hide')
+    nextBtn.classList.add('hide')
 }
 
 
 function selectAnswer(correct) {
-    setStatusClass(document.body, correct)
-    Array.from(answerBtnsElem.children).forEach(button => {
-        setStatus(button, button.dataset.correct)
-    })
-
-    nextBtn.classList.remove('hide')
+    setStatusClass(document.body, correct);
+    nextBtn.classList.remove('hide');
 }
 
 function setStatusClass(elem, correct) {
-    clearStatusClass(elem) 
+    clearStatusClass(elem); 
     if(correct) {
         elem.classList.add('correct')
     } else {
@@ -86,3 +79,7 @@ const myQuestions = [
         ]
     }
 ]
+
+// Things to work on:
+// - display a message after the user clicks on the answer 
+// - remove the elements that add up when I click the "next" btn
