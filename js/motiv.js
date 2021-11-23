@@ -14,18 +14,21 @@ function startGame() {
     showQuestion(myQuestions[0]);
 }
 
-nextBtn.addEventListener('click', () => setNextQuestion())
+nextBtn.addEventListener('click', () => setNextQuestion());
+
 //show the rest of the questions
-let currentQuestionIndex = 0;
+let currentQuestionIndex = 1;
+
 function setNextQuestion() {
     hideNextBtn();
-    currentQuestionIndex++;
     showQuestion(myQuestions[currentQuestionIndex]);
+    currentQuestionIndex++;
 }
 
 
 function showQuestion(question) {
     questionElem.innerText = question.question;
+    answerBtnsElem.innerText = "";
     question.answers.forEach(answer => {
         const button = document.createElement('button');
         //set the text inside the btn
@@ -33,22 +36,21 @@ function showQuestion(question) {
         //apply the styling
         button.classList.add('quiz-btns');
         button.addEventListener('click', () => selectAnswer(answer.correct));
-        answerBtnsElem.appendChild(button);
-    });
+        answerBtnsElem.appendChild(button)});
 }
 
 function hideNextBtn() {
-    nextBtn.classList.add('hide')
+    nextBtn.classList.add('hide');
 }
 
 function selectAnswer(correct) {
-        //set background style based on the answer
-        setStatusClass(document.body, correct);
-        //show the next button only if the answer is correct
-        if(correct) {
+    //set background style based on the answer
+    setStatusClass(document.body, correct);
+    //show the next button only if the answer is correct
+    if (correct) {
         nextBtn.classList.remove('hide');
-        }
-    };
+    } 
+};
 
 
 function setStatusClass(elem, correct) {
@@ -100,6 +102,6 @@ const myQuestions = [
 ]
 
 // Things to work on:
+// - remove the revious answers when I click the "next" btn
 // - display a message after the user clicks on the answer 
-// - remove the elements that add up when I click the "next" btn
 // - create a "restart" btnat  the last question 
