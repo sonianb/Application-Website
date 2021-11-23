@@ -15,14 +15,13 @@ function startGame() {
 }
 
 nextBtn.addEventListener('click', () => setNextQuestion())
-    //show the rest of the questions
+//show the rest of the questions
 let currentQuestionIndex = 0;
 function setNextQuestion() {
     hideNextBtn();
     currentQuestionIndex++;
     showQuestion(myQuestions[currentQuestionIndex]);
 }
-
 
 
 function showQuestion(question) {
@@ -43,14 +42,18 @@ function hideNextBtn() {
 }
 
 function selectAnswer(correct) {
-    setStatusClass(document.body, correct);
-    nextBtn.classList.remove('hide');
-}
+        //set background style based on the answer
+        setStatusClass(document.body, correct);
+        //show the next button only if the answer is correct
+        if(correct) {
+        nextBtn.classList.remove('hide');
+        }
+    };
 
-//apply background styling based on the answer
+
 function setStatusClass(elem, correct) {
-    clearStatusClass(elem); 
-    if(correct) {
+    clearStatusClass(elem);
+    if (correct) {
         elem.classList.add('correct')
     } else {
         elem.classList.add('wrong')
@@ -68,30 +71,30 @@ const myQuestions = [
     {
         question: "What is 2+2??",
         answers: [
-            {text: "4", correct: true},
-            {text: "22", correct: false}, 
-            {text: "33",correct: false}
+            { text: "4", correct: true },
+            { text: "22", correct: false },
+            { text: "33", correct: false }
         ]
     },
     {
-        question: "What is 5+2??",
+        question: "Question 2 What is 5+2??",
         answers: [
-            { text: "7", correct: true},
-            {text: "22", correct: false}
-        ]
-    }, 
-    {
-        question: "What is 9+2??",
-        answers: [
-            { text: "92", correct: false},
-            {text: "11", correct: true}
+            { text: "7", correct: true },
+            { text: "22", correct: false }
         ]
     },
     {
-        question: "What is 8+2??",
+        question: "Question 3 What is 9+2??",
         answers: [
-            { text: "10", correct: true},
-            {text: "22", correct: false}
+            { text: "92", correct: false },
+            { text: "11", correct: true }
+        ]
+    },
+    {
+        question: "Question 4 What is 8+2??",
+        answers: [
+            { text: "10", correct: true },
+            { text: "22", correct: false }
         ]
     }
 ]
@@ -99,4 +102,4 @@ const myQuestions = [
 // Things to work on:
 // - display a message after the user clicks on the answer 
 // - remove the elements that add up when I click the "next" btn
-//display a message for the last question
+// - create a "restart" btnat  the last question 
