@@ -15,24 +15,14 @@ function startGame() {
 }
 
 nextBtn.addEventListener('click', () => setNextQuestion())
-
-    //show the second question
+    //show the rest of the questions
+let currentQuestionIndex = 0;
 function setNextQuestion() {
     hideNextBtn();
-    showQuestion(myQuestions[1]);
+    currentQuestionIndex++;
+    showQuestion(myQuestions[currentQuestionIndex]);
 }
 
-    //show the third question 
-function setNextQuestion() {
-    hideNextBtn();
-    showQuestion(myQuestions[2]);
-}
-
-    //show the fourth question 
-    function setNextQuestion() {
-        hideNextBtn();
-        showQuestion(myQuestions[3]);
-    }
 
 
 function showQuestion(question) {
@@ -44,7 +34,6 @@ function showQuestion(question) {
         //apply the styling
         button.classList.add('quiz-btns');
         button.addEventListener('click', () => selectAnswer(answer.correct));
-        //creare btns
         answerBtnsElem.appendChild(button);
     });
 }
@@ -110,3 +99,4 @@ const myQuestions = [
 // Things to work on:
 // - display a message after the user clicks on the answer 
 // - remove the elements that add up when I click the "next" btn
+//display a message for the last question
