@@ -6,10 +6,15 @@ const answerBtnsElem = document.getElementById('answer-buttons');
 const restartBtnElem = document.getElementById('restart-btn');
 const displayText = document.getElementById('display-text');
 
+let currentQuestionIndex = 1;
+
 startBtn.addEventListener('click', startGame);
 
 function startGame() {
+    //start the count again for "take the quiz again" btn 
+    currentQuestionIndex = 1;
     startBtn.classList.add('hide');
+    displayText.innerText = "";
     //display the question container 
     questionContainerElem.classList.remove('hide');
     //get the first question from the myQuestions arr
@@ -17,9 +22,6 @@ function startGame() {
 }
 
 nextBtn.addEventListener('click', () => setNextQuestion());
-
-//show the rest of the questions
-let currentQuestionIndex = 1;
 
 function setNextQuestion() {
     clearStatusClass(document.body);
