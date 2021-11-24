@@ -4,6 +4,7 @@ const questionContainerElem = document.getElementById('question-container');
 const questionElem = document.getElementById('question');
 const answerBtnsElem = document.getElementById('answer-buttons');
 const restartBtnElem = document.getElementById('restart-btn');
+const displayText = document.getElementById('display-text');
 
 startBtn.addEventListener('click', startGame);
 
@@ -21,9 +22,11 @@ nextBtn.addEventListener('click', () => setNextQuestion());
 let currentQuestionIndex = 1;
 
 function setNextQuestion() {
+    clearStatusClass(document.body);
     hideNextBtn();
     showQuestion(myQuestions[currentQuestionIndex]);
     currentQuestionIndex++; 
+    displayText.innerText = "";
 }
 
 
@@ -37,7 +40,7 @@ function showQuestion(question) {
         button.innerText = answer.text;
         //apply the styling
         button.classList.add('quiz-btns');
-        button.addEventListener('click', () => selectAnswer(answer.correct));
+        button.addEventListener('click', () => selectAnswer(answer));
         answerBtnsElem.appendChild(button)});
 }
 
@@ -45,22 +48,21 @@ function hideNextBtn() {
     nextBtn.classList.add('hide');
 }
 
-function selectAnswer(correct) {
+function selectAnswer(answer) {
     //set background style based on the answer
-    setStatusClass(document.body, correct);
+    setStatusClass(document.body, answer.correct);
+    displayText.innerText = answer.message;
     //show the next button only if the answer is correct
-    if (correct) {
+    if (answer.correct) {
         nextBtn.classList.remove('hide');
     } 
-    //show restart btn 
+    //make a restart btn 
     if(currentQuestionIndex === myQuestions.length) {
         hideNextBtn()
-        restartBtnElem.classList.remove('hide');
+        startBtn.innerText = "Take the Quiz Again";
+        startBtn.classList.remove('hide');
     }
 };
-
-
-// restartBtnElem.addEventListener('click', showQuestion);
 
 
 function setStatusClass(elem, correct) {
@@ -83,40 +85,57 @@ const myQuestions = [
     {
         question: "Why am I applying for FAC?",
         answers: [
-            { text: "I want to learn from my peers and teach them, too. After all, we can all teach each other new things, without having 5+ years of experience under our belt.", correct: true },
-            { text: " I am a pro and already know everything. Actually, I changed my mind, I won’t apply for this course. Bye!", correct: false },
-            //if correct: That's the first reason!
-            //if wrong: Hmm... Not really!
-        ],
+            { 
+                text: "I want to learn from my peers and teach them, too. After all, we can all teach each other new things, without having 5+ years of experience under our belt.",
+                message: "Yes, that's the first reason!",
+                correct: true
+            },
+            { 
+                text: " I am a pro and already know everything. Actually, I changed my mind, I won’t apply for this course. Bye!", 
+                message: "Hmmm... not really!",
+                correct: false 
+            }
+        ]
     },
     {
         question: "Another reason I'm applying for FAC?",
         answers: [
-            { text: "I want to work in a group just to show everyone the right way to code.", correct: false },
-            { text: "By working with others in the programme, I want to learn how to share my ideas efficiently, present them clearly and concisely while being a good listener.", correct: true}
-            //if correct: That's right!
-            //wrong: That sounds like a terrible plan, don't you think?
+            { 
+                text: "I want to work in a group just to show everyone the right way to code.", 
+                message: "That sounds like a terrible plan, don't you think?",
+                correct: false
+            },
+            { 
+                text: "By working with others in the programme, I want to learn how to share my ideas efficiently, present them clearly and concisely while being a good listener.", 
+                message: "That's right!",
+                correct: true
+            }, 
         ]
     },
     {
         question: "That's pretty obvious but I'm applying because...",
         answers: [
-            { text: "I want to be a web developer! I want to create technology that solves users’ problems. Technology that’s meaningful, accessible, positive, and helpful." 
-                , correct: true },
-            { text: "my goal is to create a ransomware and make lots of ₿₿₿!", correct: false }
+            { 
+                text: "I want to be a web developer! I want to create technology that solves users’ problems. Technology that’s meaningful, accessible, positive, and helpful.",
+                message: "Of course!",
+                correct: true 
+            },
+            { 
+                text: "my goal is to create a ransomware and make lots of ₿₿₿!", 
+                message: "Do I need a bitcoin bank account for that?",
+                correct: false 
+            }
         ]
-        //if correct: Of course! 
-        //wrong: Do I need a bitcoin bank account for that?
     },
     {
         question: "Yes, we got that. But still, why FAC?",
         answers: [
-            { text: "I want to be a good ally to those who are under-represented in tech. What if the future of the tech industry is in the hands of tech employees with a fresh pair of eyes?", correct: true },
-            { text: "I recognise that the tech industry has a long-standing diversity and inclusion issue. My goal is to be part of the change I want to see.", correct: true}
+            { 
+                text: "I want to be a good ally to those who are under-represented in tech. What if the future of the tech industry is in the hands of tech employees with a fresh pair of eyes?", 
+                correct: true},
+            { 
+                text: "I recognise that the tech industry has a long-standing diversity and inclusion issue. My goal is to be part of the change I want to see.", 
+                correct: true}
         ]
     }
 ]
-
-// Things to work on:
-// - display a message after the user clicks on the answer 
-// - create a "restart" btnat  the last question 
