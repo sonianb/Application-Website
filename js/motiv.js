@@ -81,32 +81,38 @@ function clearStatusClass(elem) {
 // Create list of questions (an array of objects) 
 const myQuestions = [
     {
-        question: "What is 2+2??",
+        question: "Why am I applying for FAC?",
         answers: [
-            { text: "4", correct: true },
-            { text: "22", correct: false },
-            { text: "33", correct: false }
+            { text: "I want to learn from my peers and teach them, too. After all, we can all teach each other new things, without having 5+ years of experience under our belt.", correct: true },
+            { text: " I am a pro and already know everything. Actually, I changed my mind, I won’t apply for this course. Bye!", correct: false },
+            //if correct: That's the first reason!
+            //if wrong: Hmm... Not really!
         ],
     },
     {
-        question: "Question 2 What is 5+2??",
+        question: "Another reason I'm applying for FAC?",
         answers: [
-            { text: "7", correct: true },
-            { text: "22", correct: false }
+            { text: "I want to work in a group just to show everyone the right way to code.", correct: false },
+            { text: "By working with others in the programme, I want to learn how to share my ideas efficiently, present them clearly and concisely while being a good listener.", correct: true}
+            //if correct: That's right!
+            //wrong: That sounds like a terrible plan, don't you think?
         ]
     },
     {
-        question: "Question 3 What is 9+2??",
+        question: "That's pretty obvious but I'm applying because...",
         answers: [
-            { text: "92", correct: false },
-            { text: "11", correct: true }
+            { text: "I want to be a web developer! I want to create technology that solves users’ problems. Technology that’s meaningful, accessible, positive, and helpful." 
+                , correct: true },
+            { text: "my goal is to create a ransomware and make lots of ₿₿₿!", correct: false }
         ]
+        //if correct: Of course! 
+        //wrong: Do I need a bitcoin bank account for that?
     },
     {
-        question: "Question 4 What is 8+2??",
+        question: "Yes, we got that. But still, why FAC?",
         answers: [
-            { text: "10", correct: true },
-            { text: "22", correct: false }
+            { text: "I want to be a good ally to those who are under-represented in tech. What if the future of the tech industry is in the hands of tech employees with a fresh pair of eyes?", correct: true },
+            { text: "I recognise that the tech industry has a long-standing diversity and inclusion issue. My goal is to be part of the change I want to see.", correct: true}
         ]
     }
 ]

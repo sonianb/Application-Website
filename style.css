@@ -204,15 +204,15 @@ cursor: pointer;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue-neutral), 100%, 20%);
+    background-color: var(--secondary-color)
 }
 
 .quiz-body.correct {
-    --hue: var(--hue-correct);
+    background-color: green;
 }
 
 .quiz-body.wrong {
-    --hue: var(--hue-wrong);
+    background-color: red;
 }
 
 .quiz-container {
@@ -237,12 +237,11 @@ cursor: pointer;
     background-color: hsl(var(--hue), 100%, 50%);
     border-radius: 5px;
     padding: 5px 10px;
-    color: white;
     outline: none;
 }
 
 .quiz-btns:hover {
-    border-color: red;
+    background-color: var(--secondary-color);
 }
 
 .quiz-btns.correct {
@@ -258,6 +257,8 @@ cursor: pointer;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
+    background-color: #f3f3f3;
+    color: black;
 }
 
 .controls {
