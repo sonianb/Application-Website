@@ -3,6 +3,7 @@ const nextBtn = document.getElementById('next-btn');
 const questionContainerElem = document.getElementById('question-container');
 const questionElem = document.getElementById('question');
 const answerBtnsElem = document.getElementById('answer-buttons');
+const restartBtnElem = document.getElementById('restart-btn');
 
 startBtn.addEventListener('click', startGame);
 
@@ -22,12 +23,13 @@ let currentQuestionIndex = 1;
 function setNextQuestion() {
     hideNextBtn();
     showQuestion(myQuestions[currentQuestionIndex]);
-    currentQuestionIndex++;
+    currentQuestionIndex++; 
 }
 
 
 function showQuestion(question) {
     questionElem.innerText = question.question;
+    //hide previous answers
     answerBtnsElem.innerText = "";
     question.answers.forEach(answer => {
         const button = document.createElement('button');
@@ -50,7 +52,15 @@ function selectAnswer(correct) {
     if (correct) {
         nextBtn.classList.remove('hide');
     } 
+    //show restart btn 
+    if(currentQuestionIndex === myQuestions.length) {
+        hideNextBtn()
+        restartBtnElem.classList.remove('hide');
+    }
 };
+
+
+// restartBtnElem.addEventListener('click', showQuestion);
 
 
 function setStatusClass(elem, correct) {
@@ -76,7 +86,7 @@ const myQuestions = [
             { text: "4", correct: true },
             { text: "22", correct: false },
             { text: "33", correct: false }
-        ]
+        ],
     },
     {
         question: "Question 2 What is 5+2??",
@@ -102,6 +112,5 @@ const myQuestions = [
 ]
 
 // Things to work on:
-// - remove the revious answers when I click the "next" btn
 // - display a message after the user clicks on the answer 
 // - create a "restart" btnat  the last question 
