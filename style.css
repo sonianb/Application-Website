@@ -324,6 +324,25 @@ cursor: pointer;
     display: none;
 }
 
+/* 4. Style about me page  */
+
+.about-flexbox {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 3rem;
+}
+
+.about-me-description {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0.6rem 3rem;
+}
+
+.position-icons {
+    display: flex;
+}
+
 @media (max-width: 808px) {
     .flex {
         display: flex;
@@ -379,4 +398,3 @@ cursor: pointer;
     }
 
 }
-
