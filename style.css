@@ -22,6 +22,12 @@ body {
     font-size: 1.2rem;
 }
 
+.navbar-item {
+    border: 1px solid var(--primary-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+}
+
 .navbar-item:hover {
     border: 1px solid black;
     padding: 0.2rem 0.4rem;
@@ -335,14 +341,15 @@ cursor: pointer;
 
 .about-me-description {
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 0.6rem 3rem;
+    font-family: sans-serif;
 }
 
 .position-icons {
     display: flex;
    justify-content: center;
-   gap: 10px;
+   gap: 10px 15px;
 }
 
 .icons {
@@ -385,6 +392,11 @@ cursor: pointer;
         text-align: center;
         font-size: 2.5rem;
     }
+
+    .navbar-item {
+        font-size: 1rem;
+    }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 5.5rem);
@@ -416,4 +428,31 @@ cursor: pointer;
         display: none;
     }
 
+    .about-flexbox {
+        display: flex;  
+        flex-wrap: wrap-reverse;
+        gap: 15px;
+        margin: 3rem;
+        text-align: center;
+    }
+
+    .icons {
+        width: 32px;
+        height: 32px;
+    }
+
+    .about-me-description {
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 0.6rem 3rem;
+        font-family: sans-serif;
+    }
+
+
+    /* .img-responsive {
+      display: flex;
+      flex-shrink: 4;
+    } */
+
+    /* remove size atrributes from html and change it here or leave it on html and use the class here? */
 }
