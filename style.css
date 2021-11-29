@@ -10,7 +10,8 @@ a {
     color: inherit;
 }
 
-body {
+body, 
+p {
     margin: 0;
 }
 
@@ -83,7 +84,7 @@ body {
     border: 2px var(--primary-color) solid;
     animation-duration: 2s;
     transform-origin: bottom;
-    background: url(/img/pinkimg.png)
+    background-color: var(--primary-color);
 }
 
 #about:hover {
@@ -102,7 +103,7 @@ body {
     animation-duration: 2s;
     transform-origin: bottom;
     animation-delay: 1.5s;
-    background-image: url(/img/greenimg.png);
+    background-color: var(--secondary-color);
 }
 
 
@@ -115,6 +116,7 @@ body {
 }
 
 #work {
+    background-color: var(--tertiary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +124,6 @@ body {
     animation-duration: 2s;
     transform-origin: bottom;
     animation-delay: 3s; 
-    background-image: url(/img/blueimg.png)
 }
 
 #work:hover {
@@ -337,6 +338,7 @@ cursor: pointer;
     justify-content: space-between;
     gap: 15px;
     margin: 3rem;
+    margin-bottom: 7rem;
 }
 
 .about-me-description {
@@ -348,8 +350,9 @@ cursor: pointer;
 
 .position-icons {
     display: flex;
-   justify-content: center;
-   gap: 10px 15px;
+    justify-content: center;
+    gap: 10px 15px;
+    margin: 0.8rem;
 }
 
 .icons {
@@ -369,6 +372,13 @@ cursor: pointer;
     padding: 1rem;
     height: 1vh;
 }
+
+.position-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width: 808px) {
     .flex {
         display: flex;
@@ -431,6 +441,7 @@ cursor: pointer;
     .about-flexbox {
         display: flex;  
         flex-wrap: wrap-reverse;
+        justify-content: center;
         gap: 15px;
         margin: 3rem;
         text-align: center;
@@ -444,15 +455,12 @@ cursor: pointer;
     .about-me-description {
         text-align: center;
         font-size: 1.1rem;
-        padding: 0.6rem 3rem;
+        padding: 0.6rem 1.5rem;
         font-family: sans-serif;
     }
 
-
-    /* .img-responsive {
-      display: flex;
-      flex-shrink: 4;
-    } */
-
-    /* remove size atrributes from html and change it here or leave it on html and use the class here? */
+    .img-responsive {    
+      width: 214px;
+      height: auto;
+    }
 }
