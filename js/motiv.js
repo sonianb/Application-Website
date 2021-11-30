@@ -20,6 +20,8 @@ function startGame() {
     h1intro.classList.add('hide');
     pElement.classList.add('hide')
     displayText.innerText = "";
+    //reset background 
+    clearStatusClass(mainElement);
     //display the question container 
     questionContainerElem.classList.remove('hide');
     //get the first question from the myQuestions arr
@@ -70,7 +72,6 @@ function selectAnswer(answer) {
     }
 };
 
-// background color doesn't work. Will come back to fix it 
 function setStatusClass(elem, correct) {
     clearStatusClass(elem);
     if (correct) {
