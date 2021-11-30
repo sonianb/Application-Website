@@ -31,18 +31,11 @@ main {
     align-items: center;
     height: var(--header-height);
     font-size: 1.2rem;
+    background-color: var(--navbar-background-color);
 }
 
-/* style navbar elements on about page for hover effect */
 .navbar-item {
-    border: 1px solid var(--primary-color);
-    padding: 0.2rem 0.4rem;
-    border-radius: 50%;
-}
-
-/* style navbar on motiv page for hover effect */
-.item-motiv {
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--navbar-background-color);
     padding: 0.2rem 0.4rem;
     border-radius: 50%;
 }
@@ -54,19 +47,16 @@ main {
 }
 
 #navbar-about-page {
-    background-color: var(--primary-color);
+    --navbar-background-color: var(--primary-color);
 }
 
 #navbar-work-page {
-    background-color: var(--tertiary-color)
+    --navbar-background-color: var(--tertiary-color);
 }
 
 #navbar-motiv-page {
-    background-color: var(--secondary-color);
-    border: solid 1px var(--secondary-color);
+    --navbar-background-color: var(--secondary-color);
 }
-
-/* need to fix style on  motiv page  */
 
 /* 1. landing page style */
 
@@ -319,6 +309,7 @@ cursor: pointer;
     padding: 5px 10px;
     outline: none;
     font-size: 1.2rem;
+    min-height: 70px;
 }
 
 .quiz-btns:hover {
@@ -335,7 +326,7 @@ cursor: pointer;
 
 .controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
