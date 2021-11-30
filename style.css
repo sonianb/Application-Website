@@ -23,8 +23,16 @@ p {
     font-size: 1.2rem;
 }
 
+/* style navbar elements on about page for hover effect */
 .navbar-item {
     border: 1px solid var(--primary-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+}
+
+/* style navbar on motiv page for hover effect */
+.item-motiv {
+    border: 1px solid var(--secondary-color);
     padding: 0.2rem 0.4rem;
     border-radius: 50%;
 }
@@ -44,7 +52,8 @@ p {
 }
 
 #navbar-motiv-page {
-    background-color: var(--secondary-color)
+    background-color: var(--secondary-color);
+    border: solid 1px var(--secondary-color);
 }
 
 /* need to fix style on  motiv page  */
@@ -143,7 +152,7 @@ body {
     font-size: 1.6rem;
 }
 
-/*1.1 add animation for landing page items*/
+/*1.1 add animation for landing page elements*/
 
 .bounce-1 {
     animation-name: bounce-1;
@@ -259,11 +268,15 @@ cursor: pointer;
 
 /*3. Style the quiz on motiv page*/
 
+.style-p-elem {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 .quiz-body {
-    margin: 0;
     display: flex;
-    /* width: 100vw; 
-    height: 100vh;  */
+    width: 100vw; 
+    height: 70vh; 
     justify-content: center;
     align-items: center;
     background-color: #f3f3f3;
@@ -280,7 +293,7 @@ cursor: pointer;
 }
 
 .quiz-container {
-    width: 800px;
+    width: 760px;
     max-width: 80%;
     background-color: #f3f3f3;
     border-radius: 5px;
