@@ -5,6 +5,8 @@ const questionElem = document.getElementById('question');
 const answerBtnsElem = document.getElementById('answer-buttons');
 const restartBtnElem = document.getElementById('restart-btn');
 const displayText = document.getElementById('display-text');
+const h1intro = document.getElementById('h1-intro');
+const pElement = document.getElementById('p-elem-motiv');
 
 let currentQuestionIndex = 1;
 
@@ -14,6 +16,8 @@ function startGame() {
     //start the count again for "take the quiz again" btn 
     currentQuestionIndex = 1;
     startBtn.classList.add('hide');
+    h1intro.classList.add('hide');
+    pElement.classList.add('hide')
     displayText.innerText = "";
     //display the question container 
     questionContainerElem.classList.remove('hide');
@@ -30,7 +34,6 @@ function setNextQuestion() {
     currentQuestionIndex++; 
     displayText.innerText = "";
 }
-
 
 function showQuestion(question) {
     questionElem.innerText = question.question;
@@ -66,7 +69,7 @@ function selectAnswer(answer) {
     }
 };
 
-
+// background color doesn't work. Will come back to fix it 
 function setStatusClass(elem, correct) {
     clearStatusClass(elem);
     if (correct) {

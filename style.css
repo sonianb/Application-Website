@@ -268,7 +268,7 @@ cursor: pointer;
 
 /*3. Style the quiz on motiv page*/
 
-.style-p-elem {
+#p-elem-motiv {
     text-align: center;
     font-size: 1.5rem;
 }
