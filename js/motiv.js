@@ -7,6 +7,7 @@ const restartBtnElem = document.getElementById('restart-btn');
 const displayText = document.getElementById('display-text');
 const h1intro = document.getElementById('h1-intro');
 const pElement = document.getElementById('p-elem-motiv');
+const mainElement = document.querySelector('main');
 
 let currentQuestionIndex = 1;
 
@@ -28,7 +29,7 @@ function startGame() {
 nextBtn.addEventListener('click', () => setNextQuestion());
 
 function setNextQuestion() {
-    clearStatusClass(document.body);
+    clearStatusClass(mainElement);
     hideNextBtn();
     showQuestion(myQuestions[currentQuestionIndex]);
     currentQuestionIndex++; 
@@ -55,7 +56,7 @@ function hideNextBtn() {
 
 function selectAnswer(answer) {
     //set background style based on the answer
-    setStatusClass(document.body, answer.correct);
+    setStatusClass(mainElement, answer.correct);
     displayText.innerText = answer.message;
     //show the next button only if the answer is correct
     if (answer.correct) {
@@ -137,10 +138,15 @@ const myQuestions = [
         answers: [
             { 
                 text: "I want to be a good ally to those who are under-represented in tech. What if the future of the tech industry is in the hands of tech employees with a fresh pair of eyes?", 
-                correct: true},
+                message: "Definitely!",
+                correct: true
+            },
             { 
                 text: "I recognise that the tech industry has a long-standing diversity and inclusion issue. My goal is to be part of the change I want to see.", 
+                message: "And being part of FAC is a great place to start!",
                 correct: true}
         ]
     }
 ]
+
+// add 1-2 more questions to be more elaborative?
