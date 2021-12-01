@@ -5,6 +5,9 @@ const questionElem = document.getElementById('question');
 const answerBtnsElem = document.getElementById('answer-buttons');
 const restartBtnElem = document.getElementById('restart-btn');
 const displayText = document.getElementById('display-text');
+const h1intro = document.getElementById('h1-intro');
+const pElement = document.getElementById('p-elem-motiv');
+const mainElement = document.querySelector('main');
 
 let currentQuestionIndex = 1;
 
@@ -14,7 +17,11 @@ function startGame() {
     //start the count again for "take the quiz again" btn 
     currentQuestionIndex = 1;
     startBtn.classList.add('hide');
+    h1intro.classList.add('hide');
+    pElement.classList.add('hide')
     displayText.innerText = "";
+    //reset background 
+    clearStatusClass(mainElement);
     //display the question container 
     questionContainerElem.classList.remove('hide');
     //get the first question from the myQuestions arr
@@ -24,13 +31,12 @@ function startGame() {
 nextBtn.addEventListener('click', () => setNextQuestion());
 
 function setNextQuestion() {
-    clearStatusClass(document.body);
+    clearStatusClass(mainElement);
     hideNextBtn();
     showQuestion(myQuestions[currentQuestionIndex]);
     currentQuestionIndex++; 
     displayText.innerText = "";
 }
-
 
 function showQuestion(question) {
     questionElem.innerText = question.question;
@@ -52,7 +58,7 @@ function hideNextBtn() {
 
 function selectAnswer(answer) {
     //set background style based on the answer
-    setStatusClass(document.body, answer.correct);
+    setStatusClass(mainElement, answer.correct);
     displayText.innerText = answer.message;
     //show the next button only if the answer is correct
     if (answer.correct) {
@@ -65,7 +71,6 @@ function selectAnswer(answer) {
         startBtn.classList.remove('hide');
     }
 };
-
 
 function setStatusClass(elem, correct) {
     clearStatusClass(elem);
@@ -134,10 +139,15 @@ const myQuestions = [
         answers: [
             { 
                 text: "I want to be a good ally to those who are under-represented in tech. What if the future of the tech industry is in the hands of tech employees with a fresh pair of eyes?", 
-                correct: true},
+                message: "Definitely!",
+                correct: true
+            },
             { 
                 text: "I recognise that the tech industry has a long-standing diversity and inclusion issue. My goal is to be part of the change I want to see.", 
+                message: "And being part of FAC is a great place to start!",
                 correct: true}
         ]
     }
 ]
+
+// add 1-2 more questions to be more elaborative?
