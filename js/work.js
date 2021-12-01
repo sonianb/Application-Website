@@ -1,6 +1,9 @@
+const myStart = document.getElementById('start-project');
+const myStartDescription = document.getElementById('start-description')
+const closeBtnElements = document.getElementsByClassName('close-btn');
+
 const myProject1 = document.getElementById('project-1');
 const myDescription1 = document.getElementById('description-1');
-const closeBtnElements = document.getElementsByClassName('close-btn');
 
 const myProject2 = document.getElementById('project-2');
 const myDescription2 = document.getElementById('description-2');
@@ -37,6 +40,11 @@ function closeAll() {
 };
 
 //call the closeAll function each time before the dialog box opens.  
+
+myStart.addEventListener("click", () => {
+    closeAll();
+    myStartDescription.style.display = "block";
+})
 
 myProject1.addEventListener("click", () => {
     closeAll();
