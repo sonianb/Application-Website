@@ -17,10 +17,6 @@ body {
     margin: 0;
 }
 
-p {
-    margin: 0;
-}
-
 main {
     min-height: calc(100vh - var(--footer-height) - var(--header-height));
 }
@@ -93,7 +89,7 @@ main {
 }
 
 #about:hover {
-    background: url(/icons/about.png);
+    background: url(./icons/about.png);
     background-size: cover;
     background-repeat: no-repeat;
     font-weight: bold;
@@ -114,9 +110,9 @@ main {
 
 #motiv:hover {
     background-image: url(./icons/motiv.png);
-    background-size: 290px 250px;
+    background-position: -30px;
+    background-size: 336px 289px;
     background-repeat: no-repeat;
-    color: #e75480;
     font-weight: bold;
 }
 
@@ -134,7 +130,6 @@ main {
 #work:hover {
     background-image: url(/icons/work.png);
     background-size: cover;
-    color: var(--tertiary-color);
     font-weight: bold;
 }
 
@@ -321,6 +316,11 @@ cursor: pointer;
     background-color: #B8B8B8;
 }
 
+#start-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
 .start-btn, .next-btn {
     font-size: 1.5rem;
     font-weight: bold;
@@ -365,7 +365,7 @@ cursor: pointer;
     display: flex;
     justify-content: center;
     gap: 10px 15px;
-    margin: 0.8rem;
+    margin: 1.5rem 0;
 }
 
 .icons {
