@@ -128,7 +128,7 @@ main {
 }
 
 #work:hover {
-    background-image: url(/icons/work.png);
+    background-image: url(./icons/work.png);
     background-size: cover;
     font-weight: bold;
 }
