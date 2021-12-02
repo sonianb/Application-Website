@@ -9,7 +9,7 @@
 
 a {
     text-decoration: none;
-    color: inherit;
+    /* color: inherit; */
 }
  
 body {
@@ -251,6 +251,7 @@ main {
     height: fit-content;
     padding: 1rem;
     display: none;
+    font-family: sans-serif;
 }
 
 .close-btn {
