@@ -2,6 +2,8 @@
 
 This is my Application Website for the January 2022 Cohort of [Founders and Coders (FAC)](https://www.foundersandcoders.com/).  
 
+:sparkles: You can view it [here](https://sonianb.github.io/FAC-application-website/). :sparkles: 
+
 FAC is a UK-based nonprofit that develops and runs tuition-free, peer-led training programmes in web development. 
 
 ## Requirements
