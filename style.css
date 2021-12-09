@@ -61,7 +61,6 @@ main {
     width: 50%;
     padding: 1.5rem;
     text-align: center;
-    /* need to fix the font-size */
     font-size: clamp(2rem, 10vw ,3rem);
     font-family: 'Indie Flower';
 }
@@ -242,7 +241,8 @@ main {
 
 .large-container {
     background-color:var(--primary-color);
-    border: solid black 1px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 2px;
     position: absolute;
     top: 28vh;
     left: 44.2vw;
