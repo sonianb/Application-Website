@@ -1,3 +1,13 @@
+/* Table of contents
+1. landing page 
+    1.1 animation for landing page elements
+2. Projects page
+    2.2 style the dialog box 
+3. "Why FAC" page
+4. About me page 
+
+Media queries */
+
 :root {
     font-family: 'Indie Flower', sans-serif;
     --primary-color:#ffb3ba;
@@ -54,7 +64,7 @@ main {
     --navbar-background-color: var(--secondary-color);
 }
 
-/* 1. landing page style */
+/* 1. landing page */
 
 #h1-intro {
     margin: auto;
@@ -146,7 +156,7 @@ main {
     font-size: 1.6rem;
 }
 
-/*1.1 add animation for landing page elements*/
+/*1.1 animation for landing page elements*/
 
 .bounce-1 {
     animation-name: bounce-1;
@@ -159,8 +169,8 @@ main {
     65% { transform: scale(1,1)    translateY(0); }
 }
 
-/* 2. Stlye "work" page
-/* 2.1 create and style the grid */
+/* 2. Projects page
+/* 2.1 Create and style grid */
 
 .grid-container {
     display: grid;
@@ -237,7 +247,7 @@ main {
 }
 
 
-/* 2.2 style the dialog description box that appears when the user clicks on a grid item */
+/* 2.2 style the dialog box */
 
 .large-container {
     background-color:var(--primary-color);
@@ -266,7 +276,7 @@ cursor: pointer;
     text-decoration: underline;
 }
 
-/*3. Style the quiz on motiv page*/
+/*3. "Why FAC" page*/
 
 #p-elem-motiv {
     text-align: center;
@@ -348,7 +358,7 @@ cursor: pointer;
     display: none;
 }
 
-/* 4. Style about me page  */
+/* 4. About me page */
 
 .about-flexbox {
     display: flex;
@@ -422,6 +432,10 @@ cursor: pointer;
 
     .navbar-item {
         font-size: 1rem;
+    }
+
+    .bottom-margin {
+        margin-bottom: 1.8rem;
     }
 
     .grid-container {
