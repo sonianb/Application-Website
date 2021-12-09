@@ -181,6 +181,7 @@ main {
 .position-grid {
     display: flex;
     justify-content: center;
+    margin-bottom: 1.4rem;
 }
 
 #start-project {
@@ -459,7 +460,6 @@ cursor: pointer;
         flex-wrap: wrap-reverse;
         justify-content: center;
         gap: 15px;
-        margin: 3rem;
         text-align: center;
     }
 
@@ -482,7 +482,7 @@ cursor: pointer;
     }
 
     ul {
-        margin-left: -1rem;
+        margin-left: -1.3rem;
     }
 
     .links {
