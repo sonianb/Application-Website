@@ -181,7 +181,6 @@ main {
 .position-grid {
     display: flex;
     justify-content: center;
-    align-content: center;
 }
 
 #start-project {
@@ -275,7 +274,7 @@ cursor: pointer;
 
 .quiz-body {
     display: flex;
-    padding-top: 13rem;
+    padding-top: 9rem;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
@@ -354,8 +353,7 @@ cursor: pointer;
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    margin: 3rem;
-    margin-bottom: 7rem;
+    padding: 3rem;
 }
 
 .about-me-description {
