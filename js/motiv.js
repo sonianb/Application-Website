@@ -18,7 +18,7 @@ function startGame() {
     currentQuestionIndex = 1;
     startBtn.classList.add('hide');
     h1intro.classList.add('hide');
-    pElement.classList.add('hide')
+    pElement.classList.add('hide');
     displayText.innerText = "";
     //reset background 
     clearStatusClass(mainElement);
@@ -34,7 +34,7 @@ function setNextQuestion() {
     clearStatusClass(mainElement);
     hideNextBtn();
     showQuestion(myQuestions[currentQuestionIndex]);
-    currentQuestionIndex++; 
+    currentQuestionIndex++;
     displayText.innerText = "";
 }
 
@@ -49,7 +49,8 @@ function showQuestion(question) {
         //apply the styling
         button.classList.add('quiz-btns');
         button.addEventListener('click', () => selectAnswer(answer));
-        answerBtnsElem.appendChild(button)});
+        answerBtnsElem.appendChild(button)
+    });
 }
 
 function hideNextBtn() {
@@ -63,9 +64,9 @@ function selectAnswer(answer) {
     //show the next button only if the answer is correct
     if (answer.correct) {
         nextBtn.classList.remove('hide');
-    } 
+    }
     //make a restart btn 
-    if(currentQuestionIndex === myQuestions.length) {
+    if (currentQuestionIndex === myQuestions.length) {
         hideNextBtn()
         startBtn.innerText = "Take the Quiz Again";
         startBtn.classList.remove('hide');
@@ -90,64 +91,63 @@ function clearStatusClass(elem) {
 // Create list of questions (an array of objects) 
 const myQuestions = [
     {
-        question: "Why am I applying for FAC?",
+        question: "Why am I applying to FAC?",
         answers: [
-            { 
+            {
                 text: "I want to learn from my peers and teach them, too. After all, we can all teach each other new things, without having 5+ years of experience under our belt.",
-                message: "Yes, that's the first reason!",
+                message: "Yes, that's one of the reasons I'm applying!",
                 correct: true
             },
-            { 
-                text: " I am a pro and already know everything. Actually, I changed my mind, I won’t apply for this course. Bye!", 
+            {
+                text: " I am a pro and already know everything. Actually, I changed my mind, I won’t apply for this course. Bye!",
                 message: "Hmmm... not really!",
-                correct: false 
+                correct: false
             }
         ]
     },
     {
-        question: "Another reason I'm applying for FAC?",
+        question: "Another reason I'm applying to FAC?",
         answers: [
-            { 
-                text: "I want to work in a group just to show everyone the right way to code.", 
+            {
+                text: "I want to work in a group just to show everyone the right way to code.",
                 message: "That sounds like a terrible plan, don't you think?",
                 correct: false
             },
-            { 
-                text: "By working with others in the programme, I want to learn how to share my ideas efficiently, present them clearly and concisely while being a good listener.", 
+            {
+                text: "By working with other applicants in the programme, I want to learn how to share my ideas efficiently, present them clearly and concisely while being a good listener.",
                 message: "That's right!",
                 correct: true
-            }, 
+            },
         ]
     },
     {
-        question: "That's pretty obvious but I'm applying because...",
+        question: "That one might a bit obvious but I'm applying because...",
         answers: [
-            { 
+            {
                 text: "I want to be a web developer! I want to create technology that solves users’ problems. Technology that’s meaningful, accessible, positive, and helpful.",
                 message: "Of course!",
-                correct: true 
+                correct: true
             },
-            { 
-                text: "my goal is to create a ransomware and make lots of ₿₿₿!", 
+            {
+                text: "my goal is to create a ransomware and make lots of ₿₿₿!",
                 message: "Do I need a bitcoin bank account for that?",
-                correct: false 
+                correct: false
             }
         ]
     },
     {
-        question: "Yes, we got that. But still, why FAC?",
+        question: "Okay, sure. But still, why FAC?",
         answers: [
-            { 
-                text: "I want to be a good ally to those who are under-represented in tech. What if the future of the tech industry is in the hands of tech employees with a fresh pair of eyes?", 
+            {
+                text: "Because I want to be a good ally to those who are under-represented in tech. What if the future of the tech industry is in the hands of tech employees with a fresh pair of eyes?",
                 message: "Definitely!",
                 correct: true
             },
-            { 
-                text: "I recognise that the tech industry has a long-standing diversity and inclusion issue. My goal is to be part of the change I want to see.", 
+            {
+                text: "I recognise that the tech industry has a long-standing diversity and inclusion issue. My goal is to be part of the change I want to see.",
                 message: "And being part of FAC is a great place to start!",
-                correct: true}
+                correct: true
+            }
         ]
     }
 ]
-
-// add 1-2 more questions to be more elaborative?
