@@ -63,6 +63,7 @@ main {
     text-align: center;
     /* need to fix the font-size */
     font-size: clamp(2rem, 10vw ,3rem);
+    font-family: 'Indie Flower';
 }
 
 #h2-intro {
@@ -480,5 +481,13 @@ cursor: pointer;
     .img-responsive {    
       width: 214px;
       height: auto;
+    }
+
+    ul {
+        margin-left: -1rem;
+    }
+
+    .links {
+        font-size: 0.6rem;
     }
 }
