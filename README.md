@@ -7,9 +7,9 @@ FAC is a UK-based nonprofit that develops and runs tuition-free, peer-led traini
 ## Website Requirements
 One of the requirements to apply for the programme is to build an application website that:
 
-* Tells FAC about yourself
-* Tells why you are applying for the programme
-* Demonstrates your capabilities in HTML, CSS, and JavaScript (no external libraries).
+* tells FAC about yourself,
+* tells why you are applying for the programme,
+* demonstrates your capabilities in HTML, CSS, and JavaScript (no external libraries).
   
 It must also have at least one example of each of these:
 
@@ -19,15 +19,15 @@ It must also have at least one example of each of these:
 * DOM updates in response to user interaction 
 
 ## My Application
-In this application website: 
-- [x] I used semantic HTML elements as much as possible to create an accessible user experience.
-- [x] A CSS grid was used to create the “maze” on the “projects” page and CSS flexbox layout was used to position the elements on the landing and “about” pages.
-- [x] Event listeners for user interaction were added to the “projects” page, where the user can click on an element to see the description of each project. 
-- [x] To explain why I’m applying to FAC in a fun, engaging, and interactive way, I created a quiz feature, with the help of a [YouTube tutorial](https://www.youtube.com/watch?v=riDzcEQbX6k&ab_channel=WebDevSimplified). 
+In this application website, I used: 
+- [x] semantic HTML elements, as much as possible, to create an accessible user experience,
+- [x] a CSS grid to create the “maze” on the “projects” page and CSS flexbox layout to position the elements on the landing and “about” pages,
+- [x] event listeners for user interaction on the “projects” page, where the user can click on an element to see the description of each project, and
+- [x] a quiz feature, with the help of a [YouTube tutorial](https://www.youtube.com/watch?v=riDzcEQbX6k&ab_channel=WebDevSimplified) to explain why I’m applying to FAC in a fun, engaging, and interactive way. 
 
 ## Some Sources of Inspiration 
-* Pastel and minimalistic aesthetics, which I find visually pleasing.
-* Girl Power cartoons like [The Powerpuff Girls](https://en.wikipedia.org/wiki/The_Powerpuff_Girls)
+* Minimalist pastel aesthetic, which I find visually pleasing.
+* Girl Power cartoons like [The Powerpuff Girls](https://en.wikipedia.org/wiki/The_Powerpuff_Girls).
 * Ximena Vengoechea's [personal website](https://www.ximenavengoechea.com/). 
 
 
