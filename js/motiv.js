@@ -1,45 +1,47 @@
+//Select HTML elements
 const startBtn = document.getElementById('start-btn');
 const nextBtn = document.getElementById('next-btn');
 const questionContainerElem = document.getElementById('question-container');
 const questionElem = document.getElementById('question');
 const answerBtnsElem = document.getElementById('answer-buttons');
 const restartBtnElem = document.getElementById('restart-btn');
-const displayText = document.getElementById('display-text');
+const answerMessageElem = document.getElementById('display-text');
 const h1intro = document.getElementById('h1-intro');
 const pElement = document.getElementById('p-elem-motiv');
 const mainElement = document.querySelector('main');
 
-let currentQuestionIndex = 1;
+let currentQuestionIndex = 0;
 
 startBtn.addEventListener('click', startGame);
 
 function startGame() {
     //start the count again for "take the quiz again" btn 
-    currentQuestionIndex = 1;
+    currentQuestionIndex = 0;
+    //remove startBtn, h1, and p elements
     startBtn.classList.add('hide');
     h1intro.classList.add('hide');
     pElement.classList.add('hide');
-    displayText.innerText = "";
+    answerMessageElem.innerText = "";
     //reset background 
     clearStatusClass(mainElement);
     //display the question container 
     questionContainerElem.classList.remove('hide');
     //get the first question from the myQuestions arr
-    showQuestion(myQuestions[0]);
+    showQuestion(myQuestions[currentQuestionIndex]);
 }
 
 nextBtn.addEventListener('click', () => setNextQuestion());
 
 function setNextQuestion() {
+    currentQuestionIndex++;
     clearStatusClass(mainElement);
     hideNextBtn();
     showQuestion(myQuestions[currentQuestionIndex]);
-    currentQuestionIndex++;
-    displayText.innerText = "";
+    answerMessageElem.innerText = "";
 }
 
 function showQuestion(question) {
-    questionElem.innerText = question.question;
+    questionElem.innerText = question.questionText;
     //hide previous answers
     answerBtnsElem.innerText = "";
     question.answers.forEach(answer => {
@@ -49,7 +51,8 @@ function showQuestion(question) {
         //apply the styling
         button.classList.add('quiz-btns');
         button.addEventListener('click', () => selectAnswer(answer));
-        answerBtnsElem.appendChild(button)
+        //show the button
+        answerBtnsElem.appendChild(button);
     });
 }
 
@@ -60,13 +63,14 @@ function hideNextBtn() {
 function selectAnswer(answer) {
     //set background style based on the answer
     setStatusClass(mainElement, answer.correct);
-    displayText.innerText = answer.message;
+    //show answer message 
+    answerMessageElem.innerText = answer.message;
     //show the next button only if the answer is correct
     if (answer.correct) {
         nextBtn.classList.remove('hide');
     }
-    //make a restart btn 
-    if (currentQuestionIndex === myQuestions.length) {
+    //display the restart btn for the last question 
+    if (currentQuestionIndex === myQuestions.length -1) {
         hideNextBtn()
         startBtn.innerText = "Take the Quiz Again";
         startBtn.classList.remove('hide');
@@ -91,7 +95,7 @@ function clearStatusClass(elem) {
 // Create list of questions (an array of objects) 
 const myQuestions = [
     {
-        question: "Why am I applying to FAC?",
+        questionText: "Why am I applying to FAC?",
         answers: [
             {
                 text: "I want to learn from my peers and teach them, too. After all, we can all teach each other new things, without having 5+ years of experience under our belt.",
@@ -106,7 +110,7 @@ const myQuestions = [
         ]
     },
     {
-        question: "Another reason I'm applying to FAC?",
+        questionText: "Another reason I'm applying to FAC?",
         answers: [
             {
                 text: "I want to work in a group just to show everyone the right way to code.",
@@ -121,7 +125,7 @@ const myQuestions = [
         ]
     },
     {
-        question: "That one might a bit obvious but I'm applying because...",
+        questionText: "That one might a bit obvious but I'm applying because...",
         answers: [
             {
                 text: "I want to be a web developer! I want to create technology that solves users’ problems. Technology that’s meaningful, accessible, positive, and helpful.",
@@ -136,7 +140,7 @@ const myQuestions = [
         ]
     },
     {
-        question: "Okay, sure. But still, why FAC?",
+        questionText: "Okay, sure. But still, why FAC?",
         answers: [
             {
                 text: "Because I want to be a good ally to those who are under-represented in tech. What if the future of the tech industry is in the hands of tech employees with a fresh pair of eyes?",
